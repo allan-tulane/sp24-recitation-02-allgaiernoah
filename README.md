@@ -1,7 +1,7 @@
 # CMPS 2200  Recitation 02
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):**_Noah Allgaier________________________  
+**Name (Team Member 2):**_Brian Kisken________________________
 
 In this recitation, we will investigate recurrences. 
 To complete this recitation, follow the instructions in this document. Some of your answers will go in this file, and others will require you to edit `main.py`.
@@ -14,7 +14,7 @@ To complete this recitation, follow the instructions in this document. Some of y
   + `pytest test_main.py::test_one` will just run `test_one`
   + We recommend running one test at a time as you are debugging.
 
-## Turning in your work
+## Turning in your wor
 
 - Once complete, click on the "Git" icon in the left pane on repl.it.
 - Enter a commit message in the "what did you change?" text box
@@ -37,12 +37,25 @@ where $W(1) = 1$.
 
 - [ ] 4. (2 point) Now, derive the asymptotic behavior of $W(n)$ using $f(n) = 1$, $f(n) = \log n$ and $f(n) = n$. Then, generate actual values for $W(n)$ for your code and confirm that the trends match your derivations.
 
-**TODO: your answer goes here**
+|      n |     W_1 |    W_2 |
+|--------|---------|--------|
+|     10 |      36 |     15 |
+|    100 |     652 |    127 |
+|   1000 |    9120 |   1023 |
+|  10000 |  133456 |  16383 |
+| 100000 | 1656000 | 131071 |
+|      n |     W_1 |        W_2 |
+|--------|---------|------------|
+|     10 |      36 |      8.294 |
+|    100 |     652 |    109.008 |
+|   1000 |    9120 |    959.608 |
+|  10000 |  133456 |  11655.862 |
+| 100000 | 1656000 | 117438.686 |
 
 - [ ] 5. (4 points) Now that you have a nice way to empirically generate valuess of $W(n)$, we can look at the relationship between $a$, $b$, and $f(n)$. Suppose that $f(n) = n^c$. What is the asypmptotic behavior of $W(n)$ if $c < \log_b a$? What about $c > \log_b a$? And if they are equal? Modify `test_compare_work` to compare empirical values for different work functions (at several different values of $n$) to justify your answer. 
 
-**TODO: your answer goes here**
+When $c < \log_b a$ it is the most asypmptotic, when $c > \log_b a$ it is the least asypmptotic, when they are equal it is balanced. 
 
 - [ ] 6. (3 points) $W(n)$ is meant to represent the running time of some recursive algorithm. Suppose we always had $a$ processors available to us and we wanted to compute the span of the same algorithm. Implement the function `span_calc` to compute the empirical span, where the work of the algorithm is given by $W(n)$. Implement `test_compare_span` to create a new comparison function for comparing span functions. Derive the asymptotic expressions for the span of the recurrences you used in problem 4 above. Confirm that everything matches up as it should. 
 
-**TODO: your answer goes here**
+f(n) = 1 is Θ(logn). f(n)=logn is Θ(log^2n). f(n)=n is Θ(nlogn).
