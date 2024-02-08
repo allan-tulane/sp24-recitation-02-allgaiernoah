@@ -38,3 +38,25 @@ def test_compare_span():
 	res = compare_span(span_fn1, span_fn2)
 	print(res)
 
+def f_constant(n):
+    return 1
+
+def f_log(n):
+    import math
+    return math.log(n)
+
+def f_linear(n):
+    return n
+
+sizes = [10, 100, 1000, 10000, 100000]
+result_constant = compare_work(lambda n: simple_work_calc(n, 2, 2), lambda n: work_calc(n, 2, 2, f_constant), sizes)
+result_log = compare_work(lambda n: simple_work_calc(n, 2, 2), lambda n: work_calc(n, 2, 2, f_log), sizes)
+result_linear = compare_work(lambda n: simple_work_calc(n, 2, 2), lambda n: work_calc(n, 2, 2, f_linear), sizes)
+
+
+print_results(result_constant)
+print_results(result_log)
+print_results(result_linear)
+
+
+
